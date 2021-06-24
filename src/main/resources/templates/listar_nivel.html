@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head th:replace="layout::head">
+</head>
+
+<body>
+
+
+	<div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+    
+    <!-- Menu Section Begin -->
+    <div th:replace="layout::menuoff" ></div>
+    <!-- Menu Section End -->
+    
+    <!-- Header Section Begin -->
+    <header th:replace="layout::header" ></header>
+    <!-- Header Section End -->
+
+
+
+
+	<div class="breadcrumb-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb-text">
+						<h2>Pisos</h2>
+						<div class="bt-option">
+							<a th:href="@{/home}">Home</a> <span>Pisos</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<section class="container">
+
+	
+			
+
+
+
+
+							
+
+
+
+
+
+
+
+	
+	
+		
+		<div class="botnes mb-4 container text-center">
+			
+			
+			<button type="button" class="btn_crear_nivel btn btn-primary btn-lg">Registrar Piso</button>
+			
+
+
+		</div>
+
+		<div class="mb-5">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Piso</th>
+						<th scope="col">Capacidad</th>
+						<th scope="col">Estado</th>
+						<th scope="col">Editar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each=" desc: ${lista}">
+						<th th:text="${desc.idnivel}"></th>
+						<td th:text="${desc.numpiso}"></td>
+						<td th:text="${desc.capacidad}"></td>
+						<td th:text="${desc.estado}"></td>
+						<td>
+							<button type="button" class="btn_editar_nivel btn btn-secondary"
+								th:data-idnivel="${desc.idnivel}"
+								th:data-numpiso="${desc.numpiso}"
+								th:data-capacidad="${desc.capacidad}"
+								th:data-estado="${desc.estado}">Editar</button>
+
+
+
+
+						</td>
+
+					</tr>
+
+				</tbody>
+			</table>
+
+		</div>
+
+
+
+
+	</section>
+
+
+
+
+	
+
+
+
+
+
+	<!-- Modal Crear-->
+
+	<div class="modal fade" id="modalNivel_Actualizar" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Actualizar
+						Piso</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="formulario container">
+						<form>
+							<div>
+								<input type="hidden"
+									class="form-control form-control-sm col-md-6" id="idnivel">
+							</div>
+
+							<div class=mt-4>
+								<label for="numpiso">Numero de Piso: </label> <input
+									type="text"
+									class="registro form-control form-control-sm col-md-6"
+									id="numpiso">
+							</div>
+
+
+
+							<div class=mt-4>
+								<label for="capacidad">Capacidad: </label> <input
+									type="number"
+									class="registro form-control form-control-sm col-md-6"
+									id="capacidad">
+							</div>
+
+
+
+							<div class=mt-4>
+								<label for="estado">Estado: </label> <select
+									class="p-0 registro form-control" id="estado">
+
+									<option th:value="Habilitado">Habilitado</option>
+									<option th:value="Deshabilitado">Deshabilitado</option>
+								</select>
+							</div>
+
+
+
+						</form>
+
+					</div>
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary" id="btn_actualizar">Guardar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalNivel_Crear" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Actualizar
+						Piso</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="formulario container">
+						<form>
+
+							<div class=mt-4>
+								<label for="piso">Numero de Piso: </label> <input
+									type="text"
+									class="registro form-control form-control-sm col-md-6"
+									id="piso">
+							</div>
+
+
+
+							<div class=mt-4>
+								<label for="capaci">Capacidad: </label> <input
+									type="number"
+									class="registro form-control form-control-sm col-md-6"
+									id="capaci">
+							</div>
+
+							<div class=mt-4>
+								<label for="estados">Estado: </label> <select
+									class="p-0 registro form-control" id="estados">
+
+									<option th:value="Habilitado">Habilitado</option>
+									<option th:value="Deshabilitado">Deshabilitado</option>
+								</select>
+							</div>
+
+
+
+
+
+						</form>
+
+					</div>
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary" id="btn_crear">Guardar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer Section Begin -->
+	<footer th:replace="layout::footer"></footer>
+	<!-- Footer Section End -->
+
+	<!-- Search model Begin -->
+	<div th:replace="layout::search"></div>
+	<!-- Search model end -->
+
+	<!-- Js Plugins -->
+	<script type="text/javascript"
+		th:src="@{/script/jquery/jQuery_v3.6.0.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/script/jsweb/Nivel/frmnivel.js}" defer></script>
+
+	<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+	<script th:src="@{/js/jquery.nice-select.min.js}"></script>
+	<script th:src="@{/js/jquery-ui.min.js}"></script>
+	<script th:src="@{/js/jquery.slicknav.js}"></script>
+	<script th:src="@{/js/owl.carousel.min.js}"></script>
+	<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
+

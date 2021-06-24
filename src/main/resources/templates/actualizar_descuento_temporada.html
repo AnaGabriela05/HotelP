@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head th:replace="layout::head">
+</head>
+
+<body>
+
+
+    
+    <!-- Menu Section Begin -->
+    <div th:replace="layout::menuoff" ></div>
+    <!-- Menu Section End -->
+    
+    <!-- Header Section Begin -->
+    <header th:replace="layout::header" ></header>
+    <!-- Header Section End -->
+
+
+
+
+	<div class="breadcrumb-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb-text">
+						<h2>Descuentos</h2>
+						<div class="bt-option">
+							<a th:href="@{/listar_temporada">Temporada</a> <span>Descuentos</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<section class="descuentos_sec container text-center">
+		<div th:each=" desc: ${listado_desc}" class="content container">
+
+			<div class="row">
+				<div class=col-lg-2>
+					<div>
+						<div class="card" style="width: 18rem;">
+
+
+
+							<div class="card-title card-body text-center">
+								<h3 class="card-title" th:text="${desc.categoria}"></h3>
+							</div>
+
+
+							<ul class="list-group list-group-flush text-center">
+
+
+								<li th:text="'Descuento: '+'%'+${desc.descuento}"
+									class="list-group-item"></li>
+
+								<li th:text="'Precio Base: '+'$' +${desc.preciobase}"
+									class="list-group-item"></li>
+
+								<li
+									th:text="'Precio Descontado: '+'$' +${desc.precio_descuento}"
+									class="list-group-item"></li>
+
+								<li th:text="'Diferencia: '+'$' +${desc.diferencia}"
+									class="list-group-item"></li>
+							</ul>
+
+
+
+
+
+
+							<div class="card-buton card-body text-center">
+								<button type="button" class="btn_editar_descuento"
+									th:data-idprecio="${desc.idprecio}"
+									th:data-descuento="${desc.descuento}">Editar</button>
+							</div>
+
+
+
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+		</div>
+	</section>
+	
+
+
+
+
+
+
+	<!-- Modal -->
+	<!-- Modal -->
+	<div class="modal fade" id="modalDescuento" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Aplicar Descuento</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="formulario container">
+		<form>
+			<div>
+				<input
+					type="hidden" 
+					class="form-control form-control-sm col-md-6" id="idprecio">
+			</div>
+
+			<div class=mt-4>
+				<label class="col-md-2" for="descuento">Descuento: </label> <input
+					type="number"
+					class="registro form-control form-control-sm col-md-6" id="descuento">
+			</div>
+			
+			
+
+			<div>
+				<input
+					type="hidden"  
+					class="form-control form-control-sm col-md-6" id="idtemporada">
+			</div>
+			
+			<div>
+				<input
+					type="hidden"  
+					class="form-control form-control-sm col-md-6" id="idcategoria">
+			</div>
+			
+			
+
+			
+
+		</form>
+
+	</div>
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary" id="btn_actualizar">Guardar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer Section Begin -->
+	<footer th:replace="layout::footer"></footer>
+	<!-- Footer Section End -->
+
+	<!-- Search model Begin -->
+	<div th:replace="layout::search"></div>
+	<!-- Search model end -->
+
+	<!-- Js Plugins -->
+	<script type="text/javascript" th:src="@{/script/jquery/jQuery_v3.6.0.js}"></script>
+	<script type="text/javascript" th:src="@{/script/jsweb/descuento/frmdescuento.js}" defer></script>
+	
+	<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+    <script th:src="@{/js/jquery.nice-select.min.js}"></script>
+    <script th:src="@{/js/jquery-ui.min.js}"></script>
+    <script th:src="@{/js/jquery.slicknav.js}"></script>
+    <script th:src="@{/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
+

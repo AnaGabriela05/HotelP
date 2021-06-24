@@ -1,0 +1,101 @@
+
+
+#ulnav{
+text-align:center;
+}
+.linav{
+display: inline;
+margin: 0rem 0.5rem  1rem 1rem ;
+ justify-content: end;
+  flex-direction: column;
+  align-items: center;
+  text-align: center
+}
+/* diseño de barra*/
+.nav-menu 
+{
+ background:url(../Images/gif/bf.gif);
+  padding: 0.5rem;
+  display: flex;
+}
+/* posicion*/
+.menu
+{
+ 	display: inline-block;
+  list-style: none;
+  position: relative;
+  justify-content: right;
+  width: 100%;
+   margin-top: 1%
+}
+/*color a*/
+.nav-menu a
+{
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 15px 0;
+  position: relative;  
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.nav-menu .menu li
+{
+ 	display: inline-block;
+  list-style: none;;
+  position: relative;
+  z-index: 1;
+  justify-content: right;
+}
+.nav-menu  .menu li a
+{
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  margin-right: 42px;
+  font-weight: 500;
+  padding: 27px 0;
+  position: relative;  
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+
+}
+/*
+.nav-menu .menu  span {
+  position:  unset;
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	text-align: center;
+	color: #ffffff;
+	border: 1px solid #7abdb7;
+	border-radius: 50%;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	margin-right: 7px;
+}
+.span{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	color: #ffffff;
+	border: 1px solid #7abdb7;
+	border-radius: 50%;
+}
+.span a i
+{
+  font-size: 1.5rem;
+  transition: color .4s ease;
+  font-size: 20px;
+  padding: 10px ;
+  position: relative;  
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}*/

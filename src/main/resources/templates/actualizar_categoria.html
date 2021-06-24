@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head th:replace="layout::head">
+</head>
+<body>
+
+
+    
+    <!-- Menu Section Begin -->
+    <div th:replace="layout::menuoff" ></div>
+    <!-- Menu Section End -->
+    
+    <!-- Header Section Begin -->
+    <header th:replace="layout::header" ></header>
+    <!-- Header Section End -->
+
+
+
+	<!-- Breadcrumb Section Begin -->
+	<div class="breadcrumb-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb-text">
+						<h2>Registrar Categoria</h2>
+						<div class="bt-option">
+							<a href="/habitacion">Habitaciones</a> <span>Registrar
+								Categoria</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contenedor-form">
+		<form class="formus" th:action="@{/actualizar_cate}" th:object=${cate_seleccionado} autocomplete="off"  enctype="multipart/form-data"
+			method="post">
+				
+				<input
+					type="hidden" th:field="*{idcategoria}" class="registro" placeholder="Ingrese el ID" id="idcategoria">
+				
+				<label class="form-label mt-3" for="categoria">Nombre: </label> <input
+					type="text" th:field="*{categoria}" class="registro" placeholder="Ingrese el Nombre" id="categoria">
+			
+
+			
+				<label class="form-label" for="descriph">Descripcion: </label>
+
+				<textarea th:field="*{descriph}" class="registro-text" placeholder="Ingrese la Descripcion" id="descriph"></textarea>
+			
+
+			
+				<label class="form-label" for="preciobase">Precio: </label> <input
+					type="number" step="0.01" th:field="*{preciobase}"  placeholder="Ingrese el Precio" class="registro"
+					id="preciobase">
+					
+
+				<label class="form-label" for="estado">Disponibilidad: </label>
+				<select class="p-0 registro form-control" id= "estado" th:field="*{estado}" >
+						<option hidden value="">Selecciona una opcion</option>
+						<option th:value="Habilitado">Habilitado</option>
+						<option  th:value="Deshabilitado">Deshabilitado</option>
+				</select>
+
+				 <input
+					type="hidden" step="0.01" th:field="*{preciodescuento}"  placeholder="Ingrese el Precio Descuento" class="registro"
+					id="preciodescuento">
+					
+				<label class="form-label" for="imagen">Imagen: </label> <input
+					type="file" name="file"  placeholder="Ingrese la imagen" class="registro"
+					id="imagen">	
+					
+			
+
+			
+			<input type="submit" class="btn-registrar" value="Guardar">
+			
+
+		</form>
+
+
+	</div>
+
+
+   <!-- Footer Section Begin -->
+    <footer th:replace="layout::footer" ></footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div th:replace="layout::search" ></div>
+    <!-- Search model end -->
+
+
+
+
+</body>
+</html>

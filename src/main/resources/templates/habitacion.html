@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head th:replace="layout::head">
+
+<meta charset="UTF-8">
+<title>Habitaciones</title>
+</head>
+
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<div class="offcanvas-menu-overlay"></div>
+	<div class="canvas-open">
+		<i class="icon_menu"></i>
+	</div>
+
+	<!-- Menu Section Begin -->
+	<div th:replace="layout::menuoff"></div>
+	<!-- Menu Section End -->
+
+	<!-- Header Section Begin -->
+	<header th:replace="layout::header"></header>
+
+	<!-- Header Section End -->
+	<div class="banner" th:if="${encontrado}">
+		<div class="banner__content">
+			<h1 class="banner__title" th:text="${tempo.temporada}"></h1>
+			<p class="banner__txt" th:text="${tempo.descripcion}"></p>
+
+		</div>
+
+
+	</div>
+
+
+	<!-- Breadcrumb Section Begin -->
+	<div class="breadcrumb-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb-text">
+						<h2>Categorias</h2>
+						<div class="bt-option">
+							<a th:href="@{/home}">Home</a> <span>Categorias</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Breadcrumb Section End -->
+
+	<section class="aboutus-page-section-habitacion">
+		
+		<div class="registrar_a  mb-4 container">
+
+			<a th:href="@{/habitacion/registrarcategoria}" class="bk-btn text-center">
+			
+						<h1>+</h1>
+						<h3 class="mb-4">Registrar Categoria</h3>
+			</a>
+			
+
+
+			</div>
+		
+
+		
+		
+
+		<div th:each="listas : ${lista}" class="container">
+
+			<div class="about-page-text-habitacion">
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="imagen">
+
+							<img th:src="@{'/images/'+${listas.foto}}" style="width: 100%;">
+							<div th:if="${encontrado}">
+								<img th:if="${listas.preciodescuento} != ${listas.preciobase}"
+									class="descuento" src="img/descuento.png">
+								<h3 th:if="${listas.preciodescuento} != ${listas.preciobase}"
+									class="descuentotxt" th:text="'%'+${listas.descuento}"></h3>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-md-6 my-auto">
+
+						<div class="hola text-center">
+
+							<h2 th:text="${listas.categoria}"></h2>
+
+
+							<div class="mt-2">
+								<p th:text="${listas.descriph}"></p>
+							</div>
+
+
+							<div th:if="${encontrado}">
+								<div th:if="${listas.preciodescuento} != ${listas.preciobase}"
+									class="mt-1">
+									<h2 th:text="'$'+${listas.preciodescuento}"></h2>
+									<span>$<span style="text-decoration: line-through;"
+										th:text="${listas.preciobase}"></span></span>
+								</div>
+
+								<div th:if="${listas.preciodescuento} == ${listas.preciobase}"
+									class="mt-1">
+									<h2 th:text="'$'+${listas.preciobase}"></h2>
+
+								</div>
+							</div>
+							<div th:if="${encontrado != true}">
+
+
+								<div class="mt-1">
+									<h2 th:text="'$'+${listas.preciobase}"></h2>
+
+								</div>
+							</div>
+
+
+
+
+							<div class="boton mt-2">
+								<a th:href="@{/habitacion/actualizar_categoria/}+${listas.idcategoria}" class="bk-btn">EDITAR</a>
+
+							</div>
+
+							<div class="boton mt-2">
+								<a
+									th:href="@{/habitacion/actualizar_descuento/}+${listas.idcategoria}"
+									class="bk-btn">DESCUENTOS</a>
+
+							</div>
+
+
+
+
+
+						</div>
+
+
+
+
+
+
+
+					</div>
+
+
+
+
+				</div>
+
+
+			</div>
+
+
+
+		</div>
+	
+	
+		
+
+
+	</section>
+
+
+
+
+	<!-- Footer Section Begin -->
+	<footer th:replace="layout::footer"></footer>
+	<!-- Footer Section End -->
+
+	<!-- Search model Begin -->
+	<div th:replace="layout::search"></div>
+	<!-- Search model end -->
+
+	<!-- Js Plugins -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+	<script type="text/javascript" th:src="@{/script/jsweb/descuento/frmdescuento.js}" defer></script>
+</body>
+
+</html>

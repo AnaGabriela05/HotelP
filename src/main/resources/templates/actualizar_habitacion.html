@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head th:replace="layout::head">
+</head>
+<body>
+
+    
+    <!-- Menu Section Begin -->
+    <div th:replace="layout::menuoff" ></div>
+    <!-- Menu Section End -->
+    
+    <!-- Header Section Begin -->
+    <header th:replace="layout::header" ></header>
+    <!-- Header Section End -->
+
+
+
+
+	<!-- Breadcrumb Section Begin -->
+	<div class="breadcrumb-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb-text">
+						<h2>Actualizar Habitacion</h2>
+						<div class="bt-option">
+							<a th:href="@{/listar_habitacion}">Habitaciones</a> <span>Actualizar
+								Habitacion</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contenedor-form">
+		<form class="formus" th:action="@{/actualizar_habita}" th:object="${habitacion_encontrada}" autocomplete="off" 
+			method="post">
+			
+			<input
+					type="hidden" th:field="*{idhabitacion}" class="registro" placeholder="Ingrese el ID" id="idhabitacion">
+			
+			<label class="form-label mt-4" for="idcategoria">Categoria: </label>
+			<select class="p-0 registro form-control" id="idcategoria" th:field="*{idcategoria}">
+
+				
+				<option th:each="cate :${categoria}"
+					th:text="${cate.categoria}"
+					th:value="${cate.idcategoria}"></option>
+
+			</select>
+			
+			<label class="form-label" for="idestado">Estado: </label>
+
+				
+			<select class="p-0 registro form-control" id="idestado" th:field="*{idestado}">
+
+				
+				<option th:each="esta :${estado}"
+					th:text="${esta.nomestado}"
+					th:value="${esta.idestado}"></option>
+
+			</select>
+			
+			
+			
+			<label class="form-label" for="idnivel">Estado: </label>
+
+				
+			<select class="p-0 registro form-control" id="idnivel" th:field="*{idnivel}">
+
+			
+				<option th:each="niv :${nivel}"
+					th:text="${niv.numpiso}"
+					th:value="${niv.idnivel}"></option>
+
+			</select>
+				
+					
+
+					
+			<input type="submit" class="btn-registrar" value="Guardar">
+			
+
+		</form>
+
+
+	</div>
+
+
+   <!-- Footer Section Begin -->
+    <footer th:replace="layout::footer" ></footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div th:replace="layout::search" ></div>
+    <!-- Search model end -->
+
+
+
+
+</body>
+</html>
+

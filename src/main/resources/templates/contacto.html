@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head th:replace="layout::head">
+<meta charset="UTF-8">
+<title>Padama Hotel</title>
+</head>
+
+<body>
+	<!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+    
+    <!-- Menu Section Begin -->
+    <div th:replace="layout::menuoff" ></div>
+    <!-- Menu Section End -->
+    
+    <!-- Header Section Begin -->
+    <header th:replace="layout::header" ></header>
+    <!-- Header Section End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-text">
+                        <h2>Información de Contacto</h2>
+                        <p>Llene el formulario para que uno de nuestros asesores se comunique con ud.</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="c-o">Dirección:</td>
+                                    <td>Av. El Olivar cuadra 12 Urb. Jorge Chavez Callao, Lima - Perú</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Teléfono:</td>
+                                    <td>+51 1 5752794</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-o">Email:</td>
+                                    <td>padama@gmail.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-7 offset-lg-1">
+                    <form action="#" class="contact-form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Tu Nombre">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Tu Email">
+                            </div>
+                            <div class="col-lg-12">
+                                <textarea placeholder="Tu Mensaje"></textarea>
+                                <button type="submit">Enviar Ahora</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8033.2740141521135!2d-77.10149039921713!3d-12.023458612432355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc990398b1c5375ca!2sPadama!5e0!3m2!1ses-419!2spe!4v1618437758454!5m2!1ses-419!2spe"
+                    height="470" style="border:0;" ></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer th:replace="layout::footer" ></footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div th:replace="layout::search" ></div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

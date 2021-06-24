@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+
+<head th:replace="layout::head">
+<meta charset="UTF-8">
+<title>Padama Hotel</title>
+</head>
+
+<body>
+	<!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+    
+    <!-- Menu Section Begin -->
+    <div th:replace="layout::menuoff" ></div>
+    <!-- Menu Section End -->
+    
+    <!-- Header Section Begin -->
+    <header th:replace="layout::header" ></header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero-text">
+                        <h1>Padama Hotel</h1>
+                        <p>Estos son los mejores sitios de reserva de hoteles, incluidas recomendaciones para
+                             viajes y para encontrar habitaciones de hotel a bajo precio.USUARIO</p>
+                        
+                        <a href="#" class="primary-btn">Descubrir Ahora</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
+                    <div class="booking-form">
+                        <h3>Reserva Aquí</h3>
+                        <form action="#">
+                            <div class="check-date">
+                                <label for="date-in">Registrarse:</label>
+                                <input type="text" class="date-input" id="date-in">
+                                <i class="icon_calendar"></i>
+                            </div>
+                            <div class="check-date">
+                                <label for="date-out">Verificar:</label>
+                                <input type="text" class="date-input" id="date-out">
+                                <i class="icon_calendar"></i>
+                            </div>
+                            <div class="select-option">
+                                <label for="guest">Invitados:</label>
+                                <select id="guest">
+                                    <option value="">2 Adultos</option>
+                                    <option value="">3 Adultos</option>
+                                </select>
+                            </div>
+                            <div class="select-option">
+                                <label for="room">Habitación:</label>
+                                <select id="room">
+                                    <option value="">1 Habitación</option>
+                                    <option value="">2 Habitaciones</option>
+                                </select>
+                            </div>
+                            <button type="submit">Consultar disponibilidad</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider owl-carousel">
+            <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpg"></div>
+            <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg"></div>
+            <div class="hs-item set-bg" data-setbg="img/hero/hero-3.jpg"></div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Us Section Begin -->
+    <section class="aboutus-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <span>Sobre Nosotros</span>
+                            <h2>¡Uno de los bestsellers  <br />en Lima!</h2>
+                        </div>
+                        <p class="f-para">El Padama se encuentra en Lima, a solo 5 minutos en coche del aeropuerto internacional Jorge Chávez. 
+                        Proporciona conexión Wi-Fi gratuita. Todas las habitaciones disponen de baño privado con artículos de aseo gratuitos, 
+                        TV por cable y minibar. El desayuno diario está incluido.</p>
+                        <p class="s-para">El Padama cuenta con terraza, recepción las 24 horas, salón compartido y mostrador de información 
+                        turística. El establecimiento se halla a 5 km del centro comercial Aventura Plaza. <br> ¡Hablamos tu idioma!</p>
+                        <a href="#" class="primary-btn about-btn">Leer Más</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="img/about/about-1.jpg" alt="">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="img/about/about-2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Services Section End -->
+    <section class="services-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>¿Qué hacemos?</span>
+                        <h2>Descubra nuestros servicios</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <i class="flaticon-036-parking"></i>
+                        <h4>Plan de viaje</h4>
+                        <p>No se que poner no se que poner no se que poner no se que poner no se que poner no se que poner
+                            no se que poner.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <i class="flaticon-033-dinner"></i>
+                        <h4>Servicio de catering</h4>
+                        <p>No se que poner no se que poner no se que poner no se que poner no se que poner no se que poner
+                            no se que poner.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <i class="flaticon-026-bed"></i>
+                        <h4>Niñera</h4>
+                        <p>No se que poner no se que poner no se que poner no se que poner no se que poner no se que poner
+                            no se que poner.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <i class="flaticon-024-towel"></i>
+                        <h4>Lavandería</h4>
+                        <p>No se que poner no se que poner no se que poner no se que poner no se que poner no se que poner
+                            no se que poner.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <i class="flaticon-044-clock-1"></i>
+                        <h4>Contratar Conductor</h4>
+                        <p>No se que poner no se que poner no se que poner no se que poner no se que poner no se que poner
+                            no se que poner.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <i class="flaticon-012-cocktail"></i>
+                        <h4>Bar y bebida</h4>
+                        <p>No se que poner no se que poner no se que poner no se que poner no se que poner no se que poner
+                            no se que poner.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Home Room Section Begin -->
+    <section class="hp-room-section">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b1.jpg">
+                            <div class="hr-text">
+                                <h3>Doble habitación</h3>
+                                <h2>S/. 199<span>/Por noche</span></h2>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">Tamaño:</td>
+                                            <td>30 ft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Capacidad:</td>
+                                            <td>Max 2 personas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Cama:</td>
+                                            <td>Camas King</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Servicios:</td>
+                                            <td>Wifi, Television, Bathroom,...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">Más Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b2.jpg">
+                            <div class="hr-text">
+                                <h3>Habitación Premium</h3>
+                                <h2>S/. 159<span>/Por noche</span></h2>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">Tamaño:</td>
+                                            <td>30 ft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Capacidad:</td>
+                                            <td>Max 2 personas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Cama:</td>
+                                            <td>Camas King</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Servicios:</td>
+                                            <td>Wifi, Television, Bathroom,...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">Más Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b3.jpg">
+                            <div class="hr-text">
+                                <h3>Suite</h3>
+                                <h2>S/. 198<span>/Por noche</span></h2>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">Tamaño:</td>
+                                            <td>30 ft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Capacidad:</td>
+                                            <td>Max 5 personas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Cama:</td>
+                                            <td>Camas King</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Servicios:</td>
+                                            <td>Wifi, Television, Bathroom,...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">Más Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hp-room-item set-bg" data-setbg="img/room/room-b4.jpg">
+                            <div class="hr-text">
+                                <h3>Habitación familiar</h3>
+                                <h2>S/. 299<span>/Por noche</span></h2>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="r-o">Tamaño:</td>
+                                            <td>30 ft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Capacidad:</td>
+                                            <td>Max 5 personas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Cama:</td>
+                                            <td>Camas King</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="r-o">Servicios:</td>
+                                            <td>Wifi, Television, Bathroom,...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="#" class="primary-btn">Más Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Room Section End -->
+
+    <!-- Testimonial Section Begin -->
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Testimonios</span>
+                        <h2>¿Qué dicen los clientes?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="testimonial-slider owl-carousel">
+                        <div class="ts-item">
+                            <p>Después de que un proyecto de construcción tomó más tiempo de lo esperado, mi esposo, mi hija y yo
+                                 Necesitaba un lugar para quedarse por algunas noches. Como residente de Chicago, sabemos mucho sobre nuestra
+                                 ciudad, vecindario y los tipos de opciones de vivienda disponibles y me encanta nuestro
+                                 vacaciones en el Hotel Padama.</p>
+                            <div class="ti-author">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star-half_alt"></i>
+                                </div>
+                                <h5> - Ana Gabriela</h5>
+                            </div>
+                            <img src="img/testimonial-logo.png" alt="">
+                        </div>
+                        <div class="ts-item">
+                            <p>Después de que un proyecto de construcción tomó más tiempo de lo esperado, mi esposa, mi hija y yo
+                                 Necesitaba un lugar para quedarse por algunas noches. Como residente de Chicago, sabemos mucho sobre nuestra
+                                 ciudad, vecindario y los tipos de opciones de vivienda disponibles y me encanta nuestro
+                                 vacaciones en el Hotel Sona.</p>
+                            <div class="ti-author">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star-half_alt"></i>
+                                </div>
+                                <h5> - Luis Mango</h5>
+                            </div>
+                            <img src="img/testimonial-logo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer th:replace="layout::footer" ></footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div th:replace="layout::search" ></div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+	<script type="text/javascript" th:src="@{/script/jsweb/descuento/frmdescuento.js}" defer></script>
+
+</body>
+
+</html>
