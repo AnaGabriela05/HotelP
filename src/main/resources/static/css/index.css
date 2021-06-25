@@ -29,17 +29,16 @@ margin: 0rem 0.5rem  1rem 1rem ;
    margin-top: 1%
 }
 /*color a*/
-.nav-menu a
+a .register:hover
 {
-  color: rgb(255, 255, 255);
-  font-size: 16px;
-  font-weight: 400;
-  padding: 15px 0;
-  position: relative;  
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+color:blue;
 }
+
+a .register 
+{
+color:black;
+}
+
 .nav-menu .menu li
 {
  	display: inline-block;

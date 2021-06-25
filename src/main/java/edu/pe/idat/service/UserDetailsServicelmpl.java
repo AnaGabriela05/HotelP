@@ -22,18 +22,18 @@ public class UserDetailsServicelmpl implements UserDetailsService {
 	UserRepository userRepository;
 
 	@Override
-	public UserDetails loadUserByUsername(String usuario) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
 		edu.pe.idat.model.Usuario appUser = 
-				userRepository.findByUsuario(usuario).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
+				userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
 
 		List grantList = new ArrayList();
 		for (TipoUsuario tipousuario : appUser.getTipousuario()) {
-			GrantedAuthority grantedTipoU = new SimpleGrantedAuthority(tipousuario.getNomtipo());
-			grantList.add(grantedTipoU);
+			GrantedAuthority grantedTipoUsuario = new SimpleGrantedAuthority(tipousuario.getNomtipo());
+			grantList.add(grantedTipoUsuario);
 		}
 	
-		UserDetails user = (UserDetails) new User(appUser.getUsuario(), appUser.getPassword(), grantList);
-		return user;
+		UserDetails usuario = (UserDetails) new User(appUser.getUsername(), appUser.getPassword(), grantList);
+		return usuario;
 	}
 }

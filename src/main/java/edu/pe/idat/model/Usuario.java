@@ -18,13 +18,13 @@ import javax.persistence.FetchType;
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String idUsuario;
+	private String idusuario;
 	
 	@Column
 	private String nombre;
 	
 	@Column
-	private String usuario;
+	private String username;
 
 	@Column
 	private String password;
@@ -42,12 +42,12 @@ public class Usuario {
 	@JoinTable(name = "usuario_tipo", joinColumns = @JoinColumn(name = "idusuario"), inverseJoinColumns = @JoinColumn(name = "idtipo"))
 	private Set<TipoUsuario> tipousuario;
 
-	public String getIdUsuario() {
-		return idUsuario;
+	public String getIdusuario() {
+		return idusuario;
 	}
 
-	public void setIdUsuario(String idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setIdusuario(String idusuario) {
+		this.idusuario = idusuario;
 	}
 
 	public String getNombre() {
@@ -58,12 +58,12 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public String getUsuario() {
-		return usuario;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -106,12 +106,12 @@ public class Usuario {
 		this.tipousuario = tipousuario;
 	}
 
-	public Usuario(String idUsuario, String nombre, String usuario, String password, boolean enabled, String telefono,
+	public Usuario(String idusuario, String nombre, String username, String password, boolean enabled, String telefono,
 			String idpais, Set<TipoUsuario> tipousuario) {
 		super();
-		this.idUsuario = idUsuario;
+		this.idusuario = idusuario;
 		this.nombre = nombre;
-		this.usuario = usuario;
+		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
 		this.telefono = telefono;

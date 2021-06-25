@@ -9,6 +9,6 @@ import edu.pe.idat.model.Usuario;
 ;
 
 @Repository
-public interface UserRepository extends CrudRepository<Usuario, String>  {
-    public Optional<Usuario> findByUsuario(String usuario);
+public interface UserRepository extends CrudRepository<Usuario, String>{
+    public Optional<Usuario> findByUsername(String username);
 }
